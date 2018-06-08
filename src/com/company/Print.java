@@ -22,11 +22,14 @@ public class Print {
 
             Random rand1 = new Random();
             end = 1 + rand1.nextInt(100);
-            // System.out.println("ending number: " + end);
+            //System.out.println("ending number: " + end);
         }
 
         String print = "";
-
+            if (end-start<10)
+            {
+                print = "This won't take long.\n";
+            }
             for (int i = start; i <= end; i++) {
 
                 if (start == end) {
