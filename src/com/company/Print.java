@@ -28,7 +28,7 @@ public class Print {
         String print = "";
             if (end-start<10)
             {
-                print = "This won't take long.\n";
+                print = "This won't take long.\n\n";
             }
             for (int i = start; i <= end; i++) {
 
@@ -47,7 +47,10 @@ public class Print {
                         print = print + "Fizz - this number is a multiple of seven\n";
 
                 } else if (i % 15 == 0) {
-                    print = print + "Fizz Buzz\n";
+                    if(i % 7 != 0)
+                        print = print + "Fizz Buzz\n";
+                    else
+                        print = print + "Fizz Buzz - this number is a multiple of seven\n";
                 } else if (i%7 == 0)
                 {
                     print = print + Integer.toString(i) +" - this number is a multiple of seven\n";
