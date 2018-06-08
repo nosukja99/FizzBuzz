@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class Print {
 
-    int start=2;
-    int end=1;
+    int start=1;
+    int end=0;
 
     public Print()
     {
@@ -35,13 +35,24 @@ public class Print {
                 if (start == end) {
                     print = "Shazam!!";
                 }
-                else if (i % 5 == 0 && i % 3 != 0) {
-                    print = print + "Buzz\n";
+                else if (i % 5 == 0 && i % 3 != 0 ) {
+                    if(i % 7 != 0)
+                        print = print + "Buzz\n";
+                    else
+                        print = print + "Buzz - this number is a multiple of seven\n";
                 } else if (i % 3 == 0 && i % 5 != 0) {
-                    print = print + "Fizz\n";
+                    if(i % 7 != 0)
+                        print = print + "Fizz\n";
+                    else
+                        print = print + "Fizz - this number is a multiple of seven\n";
+
                 } else if (i % 15 == 0) {
                     print = print + "Fizz Buzz\n";
-                } else {
+                } else if (i%7 == 0)
+                {
+                    print = print + Integer.toString(i) +" - this number is a multiple of seven\n";
+                }
+                else {
                     print = print + Integer.toString(i) + "\n";
                 }
             }
